@@ -4,6 +4,7 @@ import jsPDF from "jspdf";
 import "./DomainScanner.jsx";
 import html2pdf from "html2pdf.js";
 
+
 const DomainScanner = () => {
   const [domain, setDomain] = useState("");
   const [subdomainResults, setSubdomainResults] = useState([]); // Subdomain list
@@ -191,7 +192,7 @@ const DomainScanner = () => {
       }
     } catch (error) {
       console.error(`Error fetching ${resultType}:`, error);
-      setResult(`Error fetching ${resultType}. Please try again.`);
+      setResult(`No Subdomains available for this domain ${resultType}.`);
     }
   };
 
@@ -224,6 +225,9 @@ const DomainScanner = () => {
   }, []);
 
   return (
+
+    
+
     <div className="scanner-container">
       <header className="scanner-header">
         <div className="icon">🔒</div>
